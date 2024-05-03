@@ -1,10 +1,25 @@
+:root {
+    
+}
 
+body{
+    padding: 0;
+    margin: 0;
+
+}
+
+.container {
+    background-color: aqua;
+}
 
 #board {
+    background-color: azure;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     width: 300px;
+    height: 300px;
+    
 
     
   }

@@ -8,21 +8,40 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div id="board">
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
+    <div class="container roboto-bold">
+        <div class="header">
+            <div class="game-name">TIC TAC TOE</div>
+
+            <form>
+                <input type="text" id="player1" placeholder="Player 1" class="roboto-bold">
+                <input type="text" id="player2" placeholder="Player 2" class="roboto-bold">
+                <button type="submit" class="roboto-bold">Start</button>
+            </form>
+
+            <button class="reset">
+                Reset
+            </button>
+        </div>
+
+        
+
+        <div id="board" class="roboto-bold">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+    
+        
+
     </div>
 
-    <button class="reset">
-        Reset
-    </button>
+    
     
     <script src="script.js"></script>
 </body>
