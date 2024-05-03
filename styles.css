@@ -100,7 +100,7 @@ button.reset:hover {
     font-style: normal;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .container {
         padding: 0 1rem;
     }
@@ -110,25 +110,23 @@ button.reset:hover {
     }
 
     .game-name {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        text-align: center;
     }
 
     #game-result {
-        font-size: 1rem;
+        font-size: 2rem;
     }
 
     button.reset {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 
     #board {
         box-sizing: border-box;
     }
 
-    .cell {
-        
-        font-size: 33px;
-    }
+    
     
 }
   
