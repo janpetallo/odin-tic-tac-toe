@@ -12,9 +12,12 @@ The project requirments can be found [here](https://www.theodinproject.com/lesso
 4. The game will automatically switch turns between players.
 5. The game will end when a player wins or the grid is full.
 
+Alternatively, you can play the game [here](https://janpetallo.github.io/odin-tic-tac-toe/).
+
 ## Features
 
 - Players can enter their names before starting the game.
 - The game will display the winner when the game ends.
 - Players can restart the game at any time.
+
 
