@@ -2,6 +2,7 @@
     --primary-color:#1e293b;
     --secondary-color:#3e4c6b;
     --tertiary-color:#94a3b8;
+    --quaternary-color:#728296;
 
 }
 
@@ -88,25 +89,61 @@ button.reset:hover {
     cursor: pointer;
 }
   
-
-  
-
-  
-
-
-
-
-
-
-
-
+.cell:hover {
+    background-color: var(--quaternary-color);
+}
 
 .pixelify-sans {
-  font-family: "Pixelify Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .header {
+        padding: 0.5rem 0;
+    }
+
+    .game-name {
+        font-size: 2.5rem;
+    }
+
+    #game-result {
+        font-size: 1rem;
+    }
+
+    button.reset {
+        font-size: 0.8rem;
+    }
+
+    #board {
+        box-sizing: border-box;
+    }
+
+    .cell {
+        
+        font-size: 33px;
+    }
+    
+}
+  
+
+  
+
+
+
+
+
+
+
+
+
+
 
 
 
