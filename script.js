@@ -22,26 +22,46 @@ const Player = (name, symbol) => {
     const getSymbol = () => symbol;
     return { getName, getSymbol };
 };
+
   
 // Game object, module pattern with IIFE
 // Player objects are created and stored in the Game object
 const Game = (() => {
+    // Get reference to game result element
+    const gameResult = document.querySelector("#game-result");
+
     let player1 = Player("Player 1", "X");
     let player2 = Player("Player 2", "O");
     let currentPlayer = player1;
+    let gameOver = false;
 
     const switchPlayer = () => {
         currentPlayer = currentPlayer === player1 ? player2 : player1;
     };
 
-    const playTurn = (index) => {
-        Gameboard.setBoard(index, currentPlayer.getSymbol());
-        if (checkWin()) {
-            console.log(`${currentPlayer.getName()} wins!`);
-        } else if (checkTie()) {
-            console.log("It's a tie!");
+    const resetGame = () => {
+        gameOver = false; 
+    };
 
-        } else {
+    const playTurn = (index) => {
+        if (gameOver) return;
+
+        Gameboard.setBoard(index, currentPlayer.getSymbol());
+        render();
+    
+        if (checkWin()) {
+            gameResult.textContent = `${currentPlayer.getName()} wins!`;
+            gameOver = true;
+            return;
+        } 
+    
+        else if (checkTie()) {
+            gameResult.textContent = "It's a tie!";
+            gameOver = true;
+            return;
+        }
+    
+        else {
             switchPlayer();
         }
     };
@@ -84,7 +104,7 @@ const Game = (() => {
         return false;
     };
 
-    return { playTurn };
+    return { playTurn, resetGame, gameResult};
 })();
 
 // Event listeners
@@ -94,14 +114,15 @@ cells.forEach((cell, index) => {
         if (!Gameboard.getBoard()[index]) {
             Game.playTurn(index);
             render();
-        }
-    });
+    }});
 });
 
 // Reset button
 const resetButton = document.querySelector(".reset");
 resetButton.addEventListener("click", () => {
     Gameboard.resetBoard();
+    Game.resetGame();
+    Game.gameResult.textContent = "";
     render();
 });
 
